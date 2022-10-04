@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque de Motos</title>
+    <!-- Carregando o Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="Cabecalho" class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div>                    
+                    <img src="images/NR no background.png"
+                    title="Logomarca Night Rising Multimarcas"
+                    alt="Night Rising Multimarcas"
+                    class="logoCabecalho"
+                    />
+                    <h1>Loja de Motos NR</h1>
+
+                </div>
+            </div>
+            <div class="Menu" class="row">
+                <div>
+                    <nav id='menu'>
+                        <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+                        <ul>
+                          <li><a >Início</a></li>
+                          <li><a >Estoque</a></li>
+                          <li><a >Contato</a></li>
+                          <li><a >Sobre</a></li>
+                        </ul>
+                      </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Separação de DIV - Cabeçalho do Cadastro e Tabela  -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Cole aqui o form do bootsnipp -->
+                        <form class="form-horizontal">
+                            <fieldset>
+                            
+                            <!-- Form Name -->
+                            <legend class="tituloCadastro">Cadastro Estoque de Motos NR</legend>
+                            
+                            <p class="textCadastro">
+                                Utilize o formulário abaixo para cadastrar novas motos que entrarem no estoque das Lojas.
+                            </p>
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="nomeMoto">Modelo da Moto:</label>  
+                              <div class="col-md-4">
+                              <input id="nomeMoto" name="nomeMoto" type="text" placeholder="Ex.: Honda CG 160" class="form-control input-md">
+                                
+                              </div>
+                            </div>
+                            
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="anoMoto">Ano da Moto:</label>  
+                              <div class="col-md-4">
+                              <input id="anoMoto" name="anoMoto" type="text" placeholder="Ex.: 2022/2023" class="form-control input-md">
+                                
+                              </div>
+                            </div>
+                            
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="kmMoto">Kilometragem:</label>  
+                              <div class="col-md-4">
+                              <input id="kmMoto" name="kmMoto" type="text" placeholder="Ex.: 15.000" class="form-control input-md">
+                                
+                              </div>
+                            </div>
+                            
+                            <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="checkboxesCondicao">Condição da Moto:</label>
+                              <div class="col-md-4">
+                              <div class="checkbox">
+                                <label for="checkboxesCondicao-0">
+                                  <input type="checkbox" name="checkboxesCondicao" id="checkboxesCondicao-0" value="1">
+                                  Novo - 0 Km
+                                </label>
+                                </div>
+                              <div class="checkbox">
+                                <label for="checkboxesCondicao-1">
+                                  <input type="checkbox" name="checkboxesCondicao" id="checkboxesCondicao-1" value="2">
+                                  Usado
+                                </label>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <!-- Multiple Radios -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="radiosLoja">Loja de venda:</label>
+                              <div class="col-md-4">
+                              <div class="radio">
+                                <label for="radiosLoja-0">
+                                  <input type="radio" name="radiosLoja" id="radiosLoja-0" value="1" checked="checked">
+                                  Loja 01 - Av. Nove de Julho, Vila Padre Bento - Itu
+                                </label>
+                                </div>
+                              <div class="radio">
+                                <label for="radiosLoja-1">
+                                  <input type="radio" name="radiosLoja" id="radiosLoja-1" value="2">
+                                  Loja 02 - R. Sete de Setembro, Centro - Sorocaba
+                                </label>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <!-- Button (Double) -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="buttonSalvar"></label>
+                              <div class="col-md-8">
+                                <button id="buttonSalvar" name="buttonSalvar" class="btn btn-success">💾Salvar</button>
+                                <button id="buttonLimpar" name="buttonLimpar" class="btn btn-danger">🚫Limpar</button>
+                              </div>
+                            </div>
+                            
+                            </fieldset>
+                            </form>                                                                                  
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="col-md-6">
+                    <table border="2">
+                        <tr>
+                            <td class="tituloTabela" colspan="6" align="center"><strong>Estoque de Motos</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marca</strong></td>
+                            <td><strong>Modelo</strong></td>
+                            <td><strong>Ano</strong></td>
+                            <td><strong>KM</strong></td>
+                            <td><strong>Valor</strong></td>
+                            <td><strong>Opções</strong></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">
+                                <img src="images/Honda-Logo.png"
+                                title="Logomarca da Honda"
+                                alt="Honda"
+                                class="logo"
+                                />
+                            </td>
+                            <td>CG Titan</td>
+                            <td>22/23</td>
+                            <td class="km">0 km</td>
+                            <td class="valor">R$ 18.260,00</td>
+                            <td>
+                                <p class="editar">✏️Editar</p>
+                                <p class="apagar">🗑️Apagar</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CB Twister</td>
+                            <td>16/17</td>
+                            <td class="km">15.000 km</td>
+                            <td class="valor">R$ 15.200,00</td>
+                            <td>
+                                <p class="editar">✏️Editar</p>
+                                <p class="apagar">🗑️Apagar</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>XRE 300</td>
+                            <td>22/23</td>
+                            <td class="km">0 km</td>
+                            <td class="valor">R$ 21.790,00</td>
+                            <td>
+                                <p class="editar">✏️Editar</p>
+                                <p class="apagar">🗑️Apagar</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <img src="images/Yamaha-Logo.png"
+                                title="Logomarca da Yamaha"
+                                alt="Yamaha"
+                                class="logo"
+                                />
+                            </td>
+                            <td>FZ 250</td>
+                            <td>21/22</td>
+                            <td>7.500 km</td>
+                            <td class="valor">R$ 21.400,00</td>
+                            <td>
+                                <p class="editar">✏️Editar</p>
+                                <p class="apagar">🗑️Apagar</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>R1</td>
+                            <td>08/08</td>
+                            <td>47.000 km</td>
+                            <td class="valor">R$ 34.490,00</td>
+                            <td>
+                                <p class="editar">✏️Editar</p>
+                                <p class="apagar">🗑️Apagar</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/Kawasaki-Logo.png"
+                                title="Logomarca da Kawasaki"
+                                alt="Kawasaki"
+                                class="logo"
+                                />
+                            </td>
+                            <td>ZX10-R</td>
+                            <td>22/23</td>
+                            <td>0 km</td>
+                            <td class="valor">R$ 106.800,00</td>
+                            <td>
+                                <p class="editar">✏️Editar</p>
+                                <p class="apagar">🗑️Apagar</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><strong>Total de Motos em Estoque</strong></td>
+                            <td><strong>6</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rodape">
+        <p>Night Rising Company & NR Multimarcas. Todos os direitos reservados.© </p>
+    </div>
+
+
+</body>
+</html>
